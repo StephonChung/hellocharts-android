@@ -476,7 +476,7 @@ public class PieChartRenderer extends AbstractChartRenderer {
         int sliceIndex = 0;
         for (SliceValue sliceValue : data.getValues()) {
             final float tempAngle = Math.abs(sliceValue.getValue()) * sliceScale;
-            if (touchAngle >= lastAngle) {
+            if (touchAngle >= lastAngle && touchAngle < lastAngle + tempAngle) {
                 if (null != selectedValue) {
                     selectedValue.set(sliceIndex, sliceIndex, SelectedValueType.NONE);
                 }
